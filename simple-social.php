@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Simple Social - Sharing Widgets & Icons Updated
-Version: 0.3
+Version: 0.3.1
 Description: Adds a set of social sharing widgets & icons after each post. 
-Plugin URI: http://wordpress.org/extend/plugins/simple-social-sharing-widgets-icons-updated/
+Plugin URI: http://wordpress.org/extend/plugins/simple-social-sharing-widgets-icons-updated-updated/
 */
 
 function simple_social($content) {
@@ -11,7 +11,7 @@ global $post,$simplesocial_icons_pixels;
 $simplesocial_permlink = get_permalink($post->ID);
 $simplesocial_enclink = urlencode($simplesocial_permlink);
 $simplesocial_title = urlencode(get_the_title($post->ID) );
-$simplesocial_dir = get_settings('home').'/wp-content/plugins/simple-social-sharing-widgets-icons/icons_'.get_option('ss_iconsize',32).'/';
+$simplesocial_dir = get_settings('home').'/wp-content/plugins/simple-social-sharing-widgets-icons-updated/icons_'.get_option('ss_iconsize',32).'/';
 
 if (!is_feed() && !is_page()){
 $simplesocialcontent.='<div>';
@@ -124,10 +124,10 @@ echo '<form method="post" action="options.php"><h3>Text shown above icons:</h3><
 <h3>Select icons/widgets to display:</h3><div style="padding:20px;">';
 
 foreach($simple_social_icons as $item){
-if($item=='twitterwidget'){echo '<div style="margin-bottom:10px;font-weight:bold;font-size:9pt"><input style="margin-right:10px" id=cb_'.$item.' type="checkbox" size="20" name="ss_'.$item.'" '.(get_option('ss_'.$item,true)==true?'checked':'unchecked').'><label for="cb_'.$item.'"><img src="'.get_settings('home').'/wp-content/plugins/simple-social-sharing-widgets-icons/img/twitterwidget.png"></label></div>';}
-else if($item=='facebookwidget'){echo '<div style="margin-bottom:10px;font-weight:bold;font-size:9pt"><input style="margin-right:10px" id=cb_'.$item.' type="checkbox" size="20" name="ss_'.$item.'" '.(get_option('ss_'.$item,true)==true?'checked':'unchecked').'><label for="cb_'.$item.'"><img src="'.get_settings('home').'/wp-content/plugins/simple-social-sharing-widgets-icons/img/facebookwidget.png"></label></div>';}
-else if($item=='googlepluswidget'){echo '<div style="margin-bottom:10px;font-weight:bold;font-size:9pt"><input style="margin-right:10px" id=cb_'.$item.' type="checkbox" size="20" name="ss_'.$item.'" '.(get_option('ss_'.$item,true)==true?'checked':'unchecked').'><label for="cb_'.$item.'"><img src="'.get_settings('home').'/wp-content/plugins/simple-social-sharing-widgets-icons/img/googlepluswidget.png"></label></div><div style="clear:both"></div>';}
-else{echo '<div style="float:left;margin-right:30px;margin-bottom:10px;"><input style="margin-top:-15px;margin-right:5px" id=cb_'.$item.' type="checkbox" size="20" name="ss_'.$item.'" '.(get_option('ss_'.$item,true)==true?'checked':'unchecked').'><label for="cb_'.$item.'"><img src="'.get_settings('home').'/wp-content/plugins/simple-social-sharing-widgets-icons/icons_32/'.$item.'.png"></label></div>';
+if($item=='twitterwidget'){echo '<div style="margin-bottom:10px;font-weight:bold;font-size:9pt"><input style="margin-right:10px" id=cb_'.$item.' type="checkbox" size="20" name="ss_'.$item.'" '.(get_option('ss_'.$item,true)==true?'checked':'unchecked').'><label for="cb_'.$item.'"><img src="'.get_settings('home').'/wp-content/plugins/simple-social-sharing-widgets-icons-updated/img/twitterwidget.png"></label></div>';}
+else if($item=='facebookwidget'){echo '<div style="margin-bottom:10px;font-weight:bold;font-size:9pt"><input style="margin-right:10px" id=cb_'.$item.' type="checkbox" size="20" name="ss_'.$item.'" '.(get_option('ss_'.$item,true)==true?'checked':'unchecked').'><label for="cb_'.$item.'"><img src="'.get_settings('home').'/wp-content/plugins/simple-social-sharing-widgets-icons-updated/img/facebookwidget.png"></label></div>';}
+else if($item=='googlepluswidget'){echo '<div style="margin-bottom:10px;font-weight:bold;font-size:9pt"><input style="margin-right:10px" id=cb_'.$item.' type="checkbox" size="20" name="ss_'.$item.'" '.(get_option('ss_'.$item,true)==true?'checked':'unchecked').'><label for="cb_'.$item.'"><img src="'.get_settings('home').'/wp-content/plugins/simple-social-sharing-widgets-icons-updated/img/googlepluswidget.png"></label></div><div style="clear:both"></div>';}
+else{echo '<div style="float:left;margin-right:30px;margin-bottom:10px;"><input style="margin-top:-15px;margin-right:5px" id=cb_'.$item.' type="checkbox" size="20" name="ss_'.$item.'" '.(get_option('ss_'.$item,true)==true?'checked':'unchecked').'><label for="cb_'.$item.'"><img src="'.get_settings('home').'/wp-content/plugins/simple-social-sharing-widgets-icons-updated/icons_32/'.$item.'.png"></label></div>';
 }}
 
 
@@ -150,7 +150,7 @@ add_options_page("Simple Social", "Simple Social Icons", "administrator", "simpl
 
 function simple_social_settinglink($links,$file){
 
-if ($file=='simple-social-sharing-widgets-icons/simple-social.php'){
+if ($file=='simple-social-sharing-widgets-icons-updated/simple-social.php'){
 
 array_unshift($links,'<a href="options-general.php?page=simple_social">Settings</a>');
 
