@@ -24,14 +24,14 @@ if(get_option('ss_twitterwidget','1')){
 $simplesocialcontent .= '<div class=simplesocial><a href="http://twitter.com/share" data-url="'.$simplesocial_permlink.'" data-text="'.$simplesocial_title.'" class="twitter-share-button" data-count="horizontal">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></div>';
 }
 
-// Facebook widget
-if(get_option('ss_facebookwidget','1')){
-$simplesocialcontent .= '<div class=simplesocial><iframe src="http://www.facebook.com/plugins/like.php?href='.$simplesocial_enclink.'&layout=standard&show_faces=false&width=450&action=like&colorscheme=light&height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:25px;" allowTransparency="true"></iframe></div>';
-}
-
 // Google +1 widget
 if(get_option('ss_plusonewidget','1')){
 $simplesocialcontent .= '<div class=simplesocial><script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script><g:plusone></g:plusone></div>';
+}
+
+// Facebook widget
+if(get_option('ss_facebookwidget','1')){
+$simplesocialcontent .= '<div class=simplesocial><iframe src="http://www.facebook.com/plugins/like.php?href='.$simplesocial_enclink.'&layout=standard&show_faces=false&width=350&action=like&colorscheme=light&height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:350px; height:25px;" allowTransparency="true"></iframe></div>';
 }
 
 // New Line
