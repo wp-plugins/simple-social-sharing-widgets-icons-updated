@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Simple Social - Sharing Widgets & Icons
-Version: 0.2-fab
+Version: 0.1
 Description: Adds a set of social sharing widgets & icons after each post. 
 */
 
