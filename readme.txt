@@ -1,9 +1,9 @@
-=== Simple Social - Sharing Widgets & Icons ===
+=== Simple Social - Sharing Widgets & Icons Updated ===
 Contributors: none, fabiancz
 Requires at least: 1
 Tags: bookmark, bookmarking, bookmarks, button, buzz, del.icio.us, Digg, e-mail, email, Facebook, google, google buzz, icon, icons, image, images, links, myspace, page, pages, plugin, Post, posts, Reddit, save, seo, Share, sharethis, sharing, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, technorati, twitter, widget, google plus, google +1
-Tested up to: 3.0.1
-Stable tag: 0.1
+Tested up to: 3.2.1
+Stable tag: 0.3
 
 Adds a set of cool icons and widgets at the end of your post for your readers to share.
 
