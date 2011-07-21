@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Simple Social - Sharing Widgets & Icons Updated
-Version: 0.3.2
+Version: 0.3.3
 Description: Adds a set of social sharing widgets & icons after each post. 
 Plugin URI: http://wordpress.org/extend/plugins/simple-social-sharing-widgets-icons-updated-updated/
 */
@@ -25,7 +25,7 @@ $simplesocialcontent .= '<div class=simplesocial><a href="http://twitter.com/sha
 }
 
 // Google +1 widget
-if(get_option('ss_plusonewidget','1')){
+if(get_option('ss_googlepluswidget','1')){
 $simplesocialcontent .= '<div class=simplesocial><script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script><g:plusone></g:plusone></div>';
 }
 
