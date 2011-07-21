@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Simple Social - Sharing Widgets & Icons Updated
-Version: 0.3.1
+Version: 0.3.2
 Description: Adds a set of social sharing widgets & icons after each post. 
 Plugin URI: http://wordpress.org/extend/plugins/simple-social-sharing-widgets-icons-updated-updated/
 */
@@ -13,7 +13,7 @@ $simplesocial_enclink = urlencode($simplesocial_permlink);
 $simplesocial_title = urlencode(get_the_title($post->ID) );
 $simplesocial_dir = get_settings('home').'/wp-content/plugins/simple-social-sharing-widgets-icons-updated/icons_'.get_option('ss_iconsize',32).'/';
 
-if (!is_feed() && !is_page()){
+if (!is_feed() && !is_page() && is_single()){
 $simplesocialcontent.='<div>';
 
 // Title
