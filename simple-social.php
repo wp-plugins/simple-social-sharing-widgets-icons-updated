@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Simple Social - Sharing Widgets & Icons Updated
-Version: 0.3.4
+Version: 0.3.5
 Description: Adds a set of social sharing widgets & icons after each post.
 Plugin URI: http://wordpress.org/extend/plugins/simple-social-sharing-widgets-icons-updated-updated/
 */
@@ -16,10 +16,10 @@ function simple_social($content) {
     $simplesocialcontent = '';
 
     if (!is_feed() && !is_page() && is_single()) {
-        $simplesocialcontent .= '<div>';
+        $simplesocialcontent .= '<div class="simplesocial-box">';
 
         // Title
-        $simplesocialcontent .= '<div style="padding-top:10px;margin-bottom:10px;font-size:10pt;font-family:arial;font-weight:bold;">'.get_option('ss_title','Did you like this? Share it:').'</div>';
+        $simplesocialcontent .= '<div class="simplesocial-title" style="padding-top:10px;margin-bottom:10px;font-size:10pt;font-family:arial;font-weight:bold;">'.get_option('ss_title','Did you like this? Share it:').'</div>';
 
         // Twitter widget
         if (get_option('ss_twitterwidget','1')) {
@@ -105,7 +105,7 @@ function simple_social($content) {
         }
 
         // End
-        $simplesocialcontent.='</div><div style="clear:both;margin-bottom:20px"></div>';
+        $simplesocialcontent.='<div style="clear:both"></div></div><div class="simplesocial-clear" style="clear:both;margin-bottom:20px"></div>';
     }
 
     return $content.$simplesocialcontent;
