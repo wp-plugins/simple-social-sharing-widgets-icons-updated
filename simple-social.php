@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Simple Social - Sharing Widgets & Icons Updated
-Version: 0.3.5
+Version: 0.3.6
 Description: Adds a set of social sharing widgets & icons after each post.
 Plugin URI: http://wordpress.org/extend/plugins/simple-social-sharing-widgets-icons-updated-updated/
 */
@@ -11,7 +11,8 @@ function simple_social($content) {
 
     $simplesocial_permlink = get_permalink($post->ID);
     $simplesocial_enclink = urlencode($simplesocial_permlink);
-    $simplesocial_title = urlencode(get_the_title($post->ID) );
+    $simplesocial_title = get_the_title($post->ID);
+    $simplesocial_title_4url = urlencode($simplesocial_title);
     $simplesocial_dir = get_option('home').'/wp-content/plugins/simple-social-sharing-widgets-icons-updated/icons_'.get_option('ss_iconsize',32).'/';
     $simplesocialcontent = '';
 
@@ -41,7 +42,7 @@ function simple_social($content) {
 
         // Facebook Button
         if (get_option('ss_facebook','1')) {
-            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,500,400)" title="Share on Facebook" style="background:url('.$simplesocial_dir.'facebook.png)" href="http://www.facebook.com/share.php?u='.$simplesocial_enclink.'&t='.$simplesocial_title.'"></a>';
+            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,500,400)" title="Share on Facebook" style="background:url('.$simplesocial_dir.'facebook.png)" href="http://www.facebook.com/share.php?u='.$simplesocial_enclink.'&t='.$simplesocial_title_4url.'"></a>';
         }
 
         // Twitter Button
@@ -56,42 +57,42 @@ function simple_social($content) {
 
         // Blogger Button
         if (get_option('ss_blogger','1')) {
-            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,750,500)" title="Share on Blogger" style="background:url('.$simplesocial_dir.'blogger.png)" href="http://www.blogger.com/blog_this.pyra?t&u='.$simplesocial_enclink.'&n='.$simplesocial_title.'&pli=1"></a>';
+            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,750,500)" title="Share on Blogger" style="background:url('.$simplesocial_dir.'blogger.png)" href="http://www.blogger.com/blog_this.pyra?t&u='.$simplesocial_enclink.'&n='.$simplesocial_title_4url.'&pli=1"></a>';
         }
 
         // Delicious Button
         if (get_option('ss_delicious','1')) {
-            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,890,550)" title="Share on Delicious" style="background:url('.$simplesocial_dir.'delicious.png)" href="http://del.icio.us/post?url='.$simplesocial_enclink.'&title='.$simplesocial_title.'"></a>';
+            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,890,550)" title="Share on Delicious" style="background:url('.$simplesocial_dir.'delicious.png)" href="http://del.icio.us/post?url='.$simplesocial_enclink.'&title='.$simplesocial_title_4url.'"></a>';
         }
 
         // Digg Button
         if (get_option('ss_digg','1')) {
-            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,812,420)" title="Share on Digg" style="background:url('.$simplesocial_dir.'digg.png)" href="http://digg.com/submit?url='.$simplesocial_enclink.'&title='.$simplesocial_title.'"></a>';
+            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,812,420)" title="Share on Digg" style="background:url('.$simplesocial_dir.'digg.png)" href="http://digg.com/submit?url='.$simplesocial_enclink.'&title='.$simplesocial_title_4url.'"></a>';
         }
 
         // Google Button
         if (get_option('ss_google','1')) {
-            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,750,500)" title="Share on Google" style="background:url('.$simplesocial_dir.'google.png)" href="http://www.google.com/bookmarks/mark?op=add&bkmk='.$simplesocial_enclink.'&title='.$simplesocial_title.'"></a>';
+            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,750,500)" title="Share on Google" style="background:url('.$simplesocial_dir.'google.png)" href="http://www.google.com/bookmarks/mark?op=add&bkmk='.$simplesocial_enclink.'&title='.$simplesocial_title_4url.'"></a>';
         }
 
         // Myspace Button
         if (get_option('ss_myspace','1')) {
-            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,812,420)" title="Share on Myspace" style="background:url('.$simplesocial_dir.'myspace.png)" href="http://www.myspace.com/Modules/PostTo/Pages/?u='.$simplesocial_enclink.'&t='.$simplesocial_title.'&c='.$simplesocial_enclink.'"></a>';
+            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,812,420)" title="Share on Myspace" style="background:url('.$simplesocial_dir.'myspace.png)" href="http://www.myspace.com/Modules/PostTo/Pages/?u='.$simplesocial_enclink.'&t='.$simplesocial_title_4url.'&c='.$simplesocial_enclink.'"></a>';
         }
 
         // StumbleUpon Button
         if (get_option('ss_stumbleupon','1')) {
-            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,750,500)" title="Share on StumbleUpon" style="background:url('.$simplesocial_dir.'stumbleupon.png)" href="http://www.stumbleupon.com/submit?url='.$simplesocial_enclink.'&title='.$simplesocial_title.'"></a>';
+            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,750,500)" title="Share on StumbleUpon" style="background:url('.$simplesocial_dir.'stumbleupon.png)" href="http://www.stumbleupon.com/submit?url='.$simplesocial_enclink.'&title='.$simplesocial_title_4url.'"></a>';
         }
 
         // Yahoo Button
         if (get_option('ss_yahoo','1')) {
-            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,900,550)" title="Share on Yahoo" style="background:url('.$simplesocial_dir.'yahoo.png)" href="http://buzz.yahoo.com/buzz?targetUrl='.$simplesocial_enclink.'&headline='.$simplesocial_title.'"></a>';
+            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,900,550)" title="Share on Yahoo" style="background:url('.$simplesocial_dir.'yahoo.png)" href="http://buzz.yahoo.com/buzz?targetUrl='.$simplesocial_enclink.'&headline='.$simplesocial_title_4url.'"></a>';
         }
 
         // Reddit Button
         if (get_option('ss_reddit','1')) {
-            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,700,500)" title="Share on Reddit" style="background:url('.$simplesocial_dir.'reddit.png)" href="http://reddit.com/submit?url='.$simplesocial_enclink.'&title='.$simplesocial_title.'"></a>';
+            $simplesocialcontent .= '<a class=simplesocial onclick="return simplesocial(this,700,500)" title="Share on Reddit" style="background:url('.$simplesocial_dir.'reddit.png)" href="http://reddit.com/submit?url='.$simplesocial_enclink.'&title='.$simplesocial_title_4url.'"></a>';
         }
 
         // Technorati Button
